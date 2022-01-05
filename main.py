@@ -50,10 +50,11 @@ class MyClient(discord.Client):
         
         if self.user.mentioned_in(message) and is_help_request(message)[0] == 1: 
           updatemacrosstr = 'To update macros, ping bot with \n\'@fitbot _code\'\n or   \n \'@fitbot calories/protein/fats/carbs\' '
-          plotstr = 'To view plot of weight for the week, first update weight by pinging bot with integer weight \n\' @fitbot weight\' \n and then ping bot with \n \'@fitbot plot\''
+          plotstr = '\nTo view plot of weight for the week, first update weight by pinging bot with integer weight \n\' @fitbot weight\' \n and then ping bot with \n \'@fitbot plot\''
+          resetmacrosstr = '\nTo reset macros, ping the bot with \n\'@fitbot reset\'\n'
           
 
-          await message.channel.send(updatemacrosstr+'\n'+plotstr)
+          await message.channel.send(updatemacrosstr+'\n'+plotstr+'\n'+resetmacrosstr)
 
 keep_alive()
 client = MyClient()
